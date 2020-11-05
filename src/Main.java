@@ -1,35 +1,27 @@
 
-import java.util.ArrayList;
+import java.util.LinkedList;
 
 public class Main {
     public static void main(String[] args){
-        ArrayList<String> books = new ArrayList<>(5);
-        books.add("Том Сойер");
-        books.add("Джек Лондон");
-        books.add("Витязь в тигровой шкуре");
-        books.add("Алхимик");
-        books.add("Маленький принц");
-        books.forEach(System.out::println);   //Выводим все 5 книг
-        /*for (String book: books) {
-            System.out.println(book);
-        }*/
-        books.remove("Маленький принц");    //Удаляем последнюю книгу
-        books.forEach(System.out::println);
 
-        books.add(4, "Большие надежды");  //Заменяем последнюю книгу
-        books.forEach(System.out::println);
+        LinkedList<String> books = new LinkedList<>();
+        books.add ("Том Сойер");
+        books.add ("Джек Лондон");
+        books.add ("Маленький принц");
+        books.add ("Большие надежды");
+        books.add ("Алхимик");
 
-        String book = books.get(4);     // Выводим только последнюю книгу
-        System.out.println(book);
-        books.forEach(System.out::println);
+        books.addFirst ( "Робинзон Крузо"); //добавляет начальное число в список
+        books.addFirst ( "Робинзон Крузо"); //добавляет начальное число в список
+        books.addLast ("Витязь в тигровой шкуре"); //добавляет последнее число в список
+        books.addLast ("Витязь в тигровой шкуре"); //добавляет последнее число в список
+        books.removeLastOccurrence ("Робинзон Крузо"); // удаляет первый элемент и при этом исчезнет из массива
+        books.removeFirstOccurrence ("Витязь в тигровой шкуре"); // удаляет последний элемент и при этом исчезнет из массива
 
-        books.clear();                       // Очищаем список
-        System.out.println(books.isEmpty());  // Подтверждаем правда или нет
-        books.forEach(System.out::println);
-        books.add("Трансмормация огня");
-        books.add("Фергюсон");                 //Добавляем 3 книги, которые собираемся прочитать
-        books.add("Джек Лондон ч2");
-        books.forEach(System.out::println);
+
+        for (String str: books){
+            System.out.println(str);
+        }
 
     }
 }
